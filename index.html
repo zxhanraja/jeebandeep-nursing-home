@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Jeebandeep Nursing Home - Premium Minimalist Modern Healthcare Studio. Trusted medical & diagnostic facilities in Boropara, Hooghly.">
+  <title>Jeebandeep Nursing Home // Modern Clinic & Care</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Importing Outfit for premium geometric headlines, and Inter for clean copy -->
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script>
+    // Instant hash detection to prevent flash of wrong slide on page load
+    (function() {
+      const slideIds = ['board-intro', 'board-departments', 'board-facilities', 'board-contact'];
+      const hash = window.location.hash.replace('#', '');
+      if (hash && slideIds.includes(hash) && hash !== 'board-intro') {
+        document.documentElement.classList.add('loading-hash');
+      }
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- Fine CAD/Architectural blueprint background grid -->
+  <div class="architectural-grid">
+    <div class="grid-line vertical"></div>
+    <div class="grid-line vertical"></div>
+    <div class="grid-line vertical"></div>
+    <div class="grid-line vertical"></div>
+    <div class="grid-line vertical"></div>
+    <div class="grid-line horizontal"></div>
+    <div class="grid-line horizontal"></div>
+    <div class="grid-line horizontal"></div>
+    <!-- Diagonal background cross lines for structural blueprint feel -->
+    <svg class="diagonal-grid" width="100%" height="100%">
+      <line x1="0" y1="0" x2="100%" y2="100%" stroke="rgba(0,0,0,0.025)" stroke-width="0.8"/>
+      <line x1="100%" y1="0" x2="0" y2="100%" stroke="rgba(0,0,0,0.025)" stroke-width="0.8"/>
+    </svg>
+  </div>
+
+  <!-- Header / Navigation -->
+  <header class="app-header">
+    <div class="header-left">
+      <a href="#board-intro" class="nav-logo">
+        <svg class="logo-svg" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="20" cy="20" r="18" fill="none" stroke="#000000" stroke-width="1.5"/>
+          <line x1="8" y1="8" x2="32" y2="32" stroke="#000000" stroke-width="1.5"/>
+          <!-- Subtle clean medical dot -->
+          <circle cx="20" cy="20" r="4.5" fill="#000000" />
+        </svg>
+        <span class="logo-text">JEEBANDEEP // CLINIC</span>
+      </a>
+    </div>
+    
+    <nav class="header-nav">
+      <ul class="nav-menu">
+        <li><a href="index.html#board-intro" class="nav-item active" data-target="0">ABOUT</a></li>
+        <li><a href="departments.html" class="nav-item">DEPARTMENTS</a></li>
+        <li><a href="doctors.html" class="nav-item">DOCTORS</a></li>
+        <li><a href="index.html#board-facilities" class="nav-item" data-target="2">FACILITIES</a></li>
+        <li><a href="index.html#board-contact" class="nav-item" data-target="3">CONTACT</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-right">
+      <div class="status-clock">
+        <span class="live-pulse"></span>
+        <span id="live-ist-time">LIVE // 00:00:00</span>
+      </div>
+      <a href="appointment.html" class="appointment-cta">
+        <span>BOOK APPOINTMENT</span>
+        <svg class="cta-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+      <!-- Hamburger Menu Toggle Button for Mobile viewports -->
+      <button id="mobile-menu-btn" class="mobile-menu-toggle" aria-label="Toggle Menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Horizontal Viewport Slider Container -->
+  <main class="viewport-slides">
+
+    <!-- BOARD 1: BRAND INTRO -->
+    <section id="board-intro" class="board-slide">
+      <div class="slide-inner grid-intro">
+        
+        <!-- Intro Header tag & description -->
+        <div class="intro-description-box">
+          <div class="department-number">/ 01 /</div>
+          <p class="intro-paragraph">
+            We offer a comprehensive range of clinical services, from initial diagnostic screening to intensive emergency care and advanced surgery.
+          </p>
+        </div>
+
+        <!-- Main visual portrait block -->
+        <div class="intro-portrait-container">
+          <div class="image-wrapper">
+            <img src="assets/images/doc1.webp" alt="Clinical Specialist" class="portrait-img" decoding="async">
+          </div>
+          <div class="portrait-caption">
+            <span class="caption-title">Dr. S. Chatterjee</span>
+            <span class="caption-subtitle">Chief Medical Officer</span>
+            <div class="caption-plus">+ 2026</div>
+          </div>
+        </div>
+
+        <!-- Center holistic tagline quote -->
+        <div class="tagline-quote-box">
+          <h2 class="quote-text">
+            Our holistic approach ensures that every patient is meticulously <strong>evaluated</strong>, beautifully <strong>accommodated</strong>, and flawlessly <strong>treated</strong>.
+          </h2>
+          <span class="concept-label">From Diagnostic to Recovery</span>
+          <a href="#board-departments" class="diamond-cta nav-trigger" data-target="1">
+            <span class="diamond-icon">◇</span> GET STARTED
+          </a>
+        </div>
+
+        <!-- Giant background/bottom typography overlapping -->
+        <div class="slide-footer-brand">
+          <div class="footer-tags">
+            <span>Compassion</span>
+            <span>Precision</span>
+            <span>Excellence</span>
+          </div>
+          <h1 class="giant-bg-text">JEEBANDEEP</h1>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- BOARD 2: CLINICAL DEPARTMENTS -->
+    <section id="board-departments" class="board-slide">
+      <div class="slide-inner grid-departments">
+        
+        <div class="departments-header-strip">
+          <span class="section-tag-small">TS 04 // CL</span>
+          <h3 class="departments-panel-title">Medical Specialties & Departments</h3>
+        </div>
+
+        <!-- Vertically aligned department rows with dynamic hover previews -->
+        <div class="departments-list">
+          
+          <div class="dept-row" data-preview="assets/emergency_care.png">
+            <div class="dept-index">/ 24 /</div>
+            <h2 class="dept-name">Emergency Care</h2>
+            <div class="dept-img-thumbnail">
+              <img src="assets/emergency_care.png" alt="Emergency Care Thumbnail" loading="lazy" decoding="async">
+            </div>
+            <div class="dept-status">24/7 Critical Response</div>
+          </div>
+
+          <div class="dept-row" data-preview="assets/clinic_interior.png">
+            <div class="dept-index">/ 08 /</div>
+            <h2 class="dept-name">General Medicine</h2>
+            <div class="dept-img-thumbnail">
+              <img src="assets/clinic_interior.png" alt="General Medicine Thumbnail" loading="lazy" decoding="async">
+            </div>
+            <div class="dept-status">Outpatient Clinic</div>
+          </div>
+
+          <div class="dept-row" data-preview="assets/doctor_portrait.png">
+            <div class="dept-index">/ 12 /</div>
+            <h2 class="dept-name">Specialized Surgery</h2>
+            <div class="dept-img-thumbnail">
+              <img src="assets/doctor_portrait.png" alt="Surgery Thumbnail" loading="lazy" decoding="async">
+            </div>
+            <div class="dept-status">Advanced O.T. Units</div>
+          </div>
+
+          <div class="dept-row" data-preview="assets/clinic_interior.png">
+            <div class="dept-index">/ 15 /</div>
+            <h2 class="dept-name">Maternity & Pediatric</h2>
+            <div class="dept-img-thumbnail">
+              <img src="assets/clinic_interior.png" alt="Maternity Thumbnail" loading="lazy" decoding="async">
+            </div>
+            <div class="dept-status">Specialized Ward</div>
+          </div>
+
+          <div class="dept-row" data-preview="assets/diagnostic_lab.png">
+            <div class="dept-index">/ 04 /</div>
+            <h2 class="dept-name">Diagnostic Services</h2>
+            <div class="dept-img-thumbnail">
+              <img src="assets/diagnostic_lab.png" alt="Diagnostics Thumbnail" loading="lazy" decoding="async">
+            </div>
+            <div class="dept-status">Pathology & Radiology</div>
+          </div>
+
+        </div>
+
+        <!-- Floating Preview Element for Desktop hover -->
+        <div id="hover-preview-container">
+          <img id="hover-preview-img" src="" alt="Department Preview">
+        </div>
+
+      </div>
+    </section>
+
+    <!-- BOARD 3: FACILITIES SHOWCASE -->
+    <section id="board-facilities" class="board-slide">
+      <div class="slide-inner grid-facilities">
+        
+        <div class="facilities-intro-column">
+          <div class="department-number">/ 03 /</div>
+          <h3 class="facility-sidebar-title">Clinical Environment</h3>
+          <p class="facilities-description">
+            A state-of-the-art facility engineered around hygiene, accessibility, and high recovery outcomes.
+          </p>
+          <div class="stars-rating">
+            <span>4.3 ★ / 44 Google Reviews</span>
+            <div class="stars">★★★★☆</div>
+          </div>
+          <div class="facility-features" style="margin-top: 25px; display: flex; flex-direction: column; gap: 8px;">
+            <div class="feature-tag" style="font-family: var(--font-mono); font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted);">♿ Wheelchair-Accessible Entrance & Parking</div>
+            <div class="feature-tag" style="font-family: var(--font-mono); font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted);">💳 Cards & NFC Payments Accepted</div>
+          </div>
+        </div>
+
+        <!-- Interactive Facility Cards -->
+        <div class="facility-cards-row">
+
+          <!-- Card 1 -->
+          <div class="facility-card">
+            <div class="card-image-box">
+              <img src="assets/emergency_care.png" alt="Critical Care Ward" class="facility-img" loading="lazy" decoding="async">
+              <div class="card-plus-btn">+</div>
+            </div>
+            <div class="card-info">
+              <div class="card-header-line">
+                <span class="facility-title">ICU & Critical Care</span>
+                <span class="facility-tag-label">Emergency</span>
+              </div>
+              <div class="facility-metadata">
+                <div class="meta-item"><span class="label">Location</span><span class="value">Boropara, Hooghly</span></div>
+                <div class="meta-item"><span class="label">Bed Cap.</span><span class="value">16 Bed Unit</span></div>
+                <div class="meta-item"><span class="label">Area</span><span class="value">450 sqm.</span></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="facility-card">
+            <div class="card-image-box">
+              <img src="assets/clinic_interior.png" alt="Outpatient Lounge" class="facility-img" loading="lazy" decoding="async">
+              <div class="card-plus-btn">+</div>
+            </div>
+            <div class="card-info">
+              <div class="card-header-line">
+                <span class="facility-title">Outpatient Lounge (OPD)</span>
+                <span class="facility-tag-label">Consultations</span>
+              </div>
+              <div class="facility-metadata">
+                <div class="meta-item"><span class="label">Location</span><span class="value">Hooghly, WB</span></div>
+                <div class="meta-item"><span class="label">Capacity</span><span class="value">120 daily</span></div>
+                <div class="meta-item"><span class="label">Area</span><span class="value">320 sqm.</span></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="facility-card">
+            <div class="card-image-box">
+              <img src="assets/diagnostic_lab.png" alt="Radiology Suite" class="facility-img" loading="lazy" decoding="async">
+              <div class="card-plus-btn">+</div>
+            </div>
+            <div class="card-info">
+              <div class="card-header-line">
+                <span class="facility-title">Advanced Pathology Lab</span>
+                <span class="facility-tag-label">Diagnostics</span>
+              </div>
+              <div class="facility-metadata">
+                <div class="meta-item"><span class="label">Location</span><span class="value">Boropara, Hooghly</span></div>
+                <div class="meta-item"><span class="label">Lab Class</span><span class="value">Level-3 Safety</span></div>
+                <div class="meta-item"><span class="label">Area</span><span class="value">180 sqm.</span></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- BOARD 4: CONTACT & DETAILS -->
+    <section id="board-contact" class="board-slide">
+      <div class="slide-inner grid-contact">
+        
+        <!-- Top statement column -->
+        <div class="contact-statement">
+          <p class="statement-paragraph">
+            Our cutting-edge medical facilities integrate modern healthcare technology with patient-centric support protocols. Jeebandeep Nursing Home stands as a model of clinical integrity, ensuring advanced medical care is within reach for the entire community.
+          </p>
+        </div>
+
+        <!-- Dynamic contact details block -->
+        <div class="contact-details-grid">
+          <div class="contact-col">
+            <span class="col-tag">Emergency Line & Hotline</span>
+            <a href="tel:09163334571" class="contact-link">091633 34571</a>
+            <span class="col-subtext">Open 24 Hours / Ambulance & Triage</span>
+          </div>
+
+          <div class="contact-col">
+            <span class="col-tag">Plus Code Location</span>
+            <span class="contact-link-static" style="font-family: var(--font-display); font-size: 1.45rem; font-weight: 600; color: var(--text-primary);">X98Q+3F Saptagram</span>
+            <span class="col-subtext">Google Maps Code (West Bengal)</span>
+          </div>
+
+          <div class="contact-col">
+            <span class="col-tag">General Inquiries</span>
+            <a href="mailto:care@jeebandeep.com" class="contact-link">care@jeebandeep.com</a>
+            <span class="col-subtext">Appointments & Billing</span>
+          </div>
+
+          <div class="contact-col">
+            <span class="col-tag">Clinic Location</span>
+            <p class="address-paragraph">
+              Boropara, More, Mogra, Saptagram,<br>
+              Chinsurah, West Bengal 712502
+            </p>
+          </div>
+        </div>
+
+        <!-- Overlapping large brand text panel -->
+        <div class="contact-brand-footer">
+          <h1 class="giant-bg-text-outline">CARE</h1>
+          <div class="contact-brand-image">
+            <img src="assets/clinic_interior.png" alt="Clinical Environment Preview" class="footer-overlap-img" loading="lazy" decoding="async">
+          </div>
+        </div>
+
+        <!-- Core bottom footer links -->
+        <div class="footer-navigation">
+          <div class="footer-left-links">
+            <span class="copyright-info">© 2026 JEEBANDEEP NURSING HOME</span>
+          </div>
+          <div class="footer-center-links">
+            <a href="index.html#board-intro" class="footer-link">About us</a>
+            <a href="departments.html" class="footer-link">Specialties</a>
+            <a href="doctors.html" class="footer-link">Doctors Directory</a>
+            <a href="index.html#board-facilities" class="footer-link">Facilities</a>
+          </div>
+          <div class="footer-right-links">
+            <span class="location-stamp">BOROPARA, HOOGHLY, INDIA</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- MOBILE FULL-SCREEN MENU DRAWER -->
+  <div id="mobile-drawer-overlay" class="drawer-overlay">
+    <!-- Fine CAD blueprint grids inside drawer -->
+    <div class="drawer-grid">
+      <div class="grid-line vertical" style="left: 25%"></div>
+      <div class="grid-line vertical" style="left: 75%"></div>
+      <div class="grid-line horizontal" style="top: 30%"></div>
+      <div class="grid-line horizontal" style="top: 70%"></div>
+    </div>
+    
+    <div class="drawer-content">
+      <ul class="drawer-menu">
+        <li><a href="index.html#board-intro" class="drawer-item"><span>01</span> ABOUT</a></li>
+        <li><a href="departments.html" class="drawer-item"><span>02</span> DEPARTMENTS</a></li>
+        <li><a href="doctors.html" class="drawer-item"><span>03</span> DOCTORS</a></li>
+        <li><a href="index.html#board-facilities" class="drawer-item"><span>04</span> FACILITIES</a></li>
+        <li><a href="index.html#board-contact" class="drawer-item"><span>05</span> CONTACT</a></li>
+        <li><a href="appointment.html" class="drawer-item highlight"><span>06</span> BOOK APPOINTMENT</a></li>
+      </ul>
+
+      <div class="drawer-footer-info">
+        <div class="drawer-info-col">
+          <span class="tag">Emergency & Hotline</span>
+          <a href="tel:09163334571" class="link">091633 34571</a>
+        </div>
+        <div class="drawer-info-col">
+          <span class="tag">Clinic Location</span>
+          <p class="txt">Boropara, More, Mogra, Saptagram, West Bengal 712502</p>
+        </div>
+        <div class="drawer-info-col">
+          <span class="tag">Plus Code</span>
+          <span class="link-static">X98Q+3F Saptagram</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

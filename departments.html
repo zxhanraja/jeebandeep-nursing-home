@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore our specialized clinical departments. Professional critical care and diagnostic services at Jeebandeep Hooghly.">
+  <title>Clinical Departments // Jeebandeep Nursing Home</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="subpage">
+
+  <!-- CAD blueprint lines -->
+  <div class="architectural-grid">
+    <div class="grid-line vertical"></div>
+    <div class="grid-line vertical"></div>
+    <div class="grid-line vertical"></div>
+    <div class="grid-line vertical"></div>
+    <div class="grid-line vertical"></div>
+    <div class="grid-line horizontal"></div>
+    <div class="grid-line horizontal"></div>
+    <div class="grid-line horizontal"></div>
+    <svg class="diagonal-grid" width="100%" height="100%">
+      <line x1="0" y1="0" x2="100%" y2="100%" stroke="rgba(0,0,0,0.025)" stroke-width="0.8"/>
+      <line x1="100%" y1="0" x2="0" y2="100%" stroke="rgba(0,0,0,0.025)" stroke-width="0.8"/>
+    </svg>
+  </div>
+
+  <!-- Header -->
+  <header class="app-header">
+    <div class="header-left">
+      <a href="index.html" class="nav-logo">
+        <svg class="logo-svg" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="20" cy="20" r="18" fill="none" stroke="#000000" stroke-width="1.5"/>
+          <line x1="8" y1="8" x2="32" y2="32" stroke="#000000" stroke-width="1.5"/>
+          <circle cx="20" cy="20" r="4.5" fill="#000000" />
+        </svg>
+        <span class="logo-text">JEEBANDEEP // CLINIC</span>
+      </a>
+    </div>
+    
+    <nav class="header-nav">
+      <ul class="nav-menu">
+        <li><a href="index.html#board-intro" class="nav-item">ABOUT</a></li>
+        <li><a href="departments.html" class="nav-item active">DEPARTMENTS</a></li>
+        <li><a href="doctors.html" class="nav-item">DOCTORS</a></li>
+        <li><a href="index.html#board-facilities" class="nav-item">FACILITIES</a></li>
+        <li><a href="index.html#board-contact" class="nav-item">CONTACT</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-right">
+      <div class="status-clock">
+        <span class="live-pulse"></span>
+        <span id="live-ist-time">LIVE // 00:00:00</span>
+      </div>
+      <a href="appointment.html" class="appointment-cta">
+        <span>BOOK APPOINTMENT</span>
+        <svg class="cta-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+      <button id="mobile-menu-btn" class="mobile-menu-toggle" aria-label="Toggle Menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Content Wrapper -->
+  <main class="subpage-content">
+    
+    <!-- Hero Banner -->
+    <section class="section-hero grid-2col-split">
+      <div class="title-panel">
+        <div class="department-number">/ 03 / CLINIC</div>
+        <h1 class="giant-subpage-title">Specialties &<br>Services</h1>
+      </div>
+      <div class="desc-panel">
+        <p class="subpage-intro-paragraph">
+          Explore our fully equipped medical units. Every specialty is managed by qualified clinicians and supported by advanced screening, diagnostic, and post-operative infrastructure to deliver high-quality patient outcomes.
+        </p>
+      </div>
+    </section>
+
+    <!-- Detail Departments Grid Layout -->
+    <section class="details-departments-section">
+      <div class="detailed-depts-list">
+
+        <!-- Department 1 -->
+        <div class="dept-detail-block">
+          <div class="dept-visual">
+            <img src="assets/emergency_care.png" alt="Emergency Care Facility" class="dept-showcase-img" decoding="async">
+          </div>
+          <div class="dept-info-panel">
+            <div class="dept-header">
+              <span class="index">/ 24 /</span>
+              <h2 class="title">Emergency & Triage</h2>
+            </div>
+            <p class="description">
+              Equipped for instant response, our 24/7 emergency care unit handles trauma, cardiac emergencies, and critical respiratory care. Featuring full-time resident physicians, a specialized critical triage bay, and immediate surgical referral access.
+            </p>
+            <div class="dept-stats-grid">
+              <div class="stat-col"><span class="label">Bed Capacity</span><span class="value">16 Trauma Beds</span></div>
+              <div class="stat-col"><span class="label">Ambulance</span><span class="value">2 Active Units</span></div>
+              <div class="stat-col"><span class="label">Response Time</span><span class="value">&lt; 10 Minutes</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Department 2 -->
+        <div class="dept-detail-block reverse">
+          <div class="dept-visual">
+            <img src="assets/clinic_interior.png" alt="General Medicine Outpatient" class="dept-showcase-img" loading="lazy" decoding="async">
+          </div>
+          <div class="dept-info-panel">
+            <div class="dept-header">
+              <span class="index">/ 08 /</span>
+              <h2 class="title">General Outpatient (OPD)</h2>
+            </div>
+            <p class="description">
+              Our outpatient department is engineered for primary healthcare, preventive checkups, and routine clinical screenings. Supported by specialist consultants, we handle diabetic tracking, hypertension, respiratory health, and chronic illness management.
+            </p>
+            <div class="dept-stats-grid">
+              <div class="stat-col"><span class="label">Daily Capacity</span><span class="value">120 Patients</span></div>
+              <div class="stat-col"><span class="label">Clinicians</span><span class="value">6 General Specialists</span></div>
+              <div class="stat-col"><span class="label">Consulting Rooms</span><span class="value">4 Premium Suites</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Department 3 -->
+        <div class="dept-detail-block">
+          <div class="dept-visual">
+            <img src="assets/doctor_portrait.png" alt="Specialized Surgery OT" class="dept-showcase-img" loading="lazy" decoding="async">
+          </div>
+          <div class="dept-info-panel">
+            <div class="dept-header">
+              <span class="index">/ 12 /</span>
+              <h2 class="title">Specialized Surgery</h2>
+            </div>
+            <p class="description">
+              Advanced operating theaters optimized for orthopedic, laparoscopic, and general surgery. Fully integrated with positive pressure air ventilation systems, modern anesthesia workstations, and private post-operative recovery bays.
+            </p>
+            <div class="dept-stats-grid">
+              <div class="stat-col"><span class="label">OT Units</span><span class="value">2 Sterile Theaters</span></div>
+              <div class="stat-col"><span class="label">Cleanliness</span><span class="value">HEPA Class-100</span></div>
+              <div class="stat-col"><span class="label">Recovery Beds</span><span class="value">8 Post-OP Beds</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Department 4 -->
+        <div class="dept-detail-block reverse">
+          <div class="dept-visual">
+            <img src="assets/clinic_interior.png" alt="Maternity Ward Room" class="dept-showcase-img" loading="lazy" decoding="async">
+          </div>
+          <div class="dept-info-panel">
+            <div class="dept-header">
+              <span class="index">/ 15 /</span>
+              <h2 class="title">Maternity & Pediatrics</h2>
+            </div>
+            <p class="description">
+              Dedicated labor rooms and a private maternity wing designed for maximum patient privacy and newborn safety. Supported by a specialized pediatric assessment unit and round-the-clock neonatal nursing assistance.
+            </p>
+            <div class="dept-stats-grid">
+              <div class="stat-col"><span class="label">Labor Suites</span><span class="value">3 Labor Bays</span></div>
+              <div class="stat-col"><span class="label">Neonatal care</span><span class="value">Level-1 Nursery</span></div>
+              <div class="stat-col"><span class="label">Support Staff</span><span class="value">8 Pediatric Nurses</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Department 5 -->
+        <div class="dept-detail-block">
+          <div class="dept-visual">
+            <img src="assets/diagnostic_lab.png" alt="Diagnostics Lab Screening" class="dept-showcase-img" loading="lazy" decoding="async">
+          </div>
+          <div class="dept-info-panel">
+            <div class="dept-header">
+              <span class="index">/ 04 /</span>
+              <h2 class="title">Pathology & Radiology</h2>
+            </div>
+            <p class="description">
+              Advanced digital diagnostic services offering swift pathology reporting, biochemistries, radiography (X-Ray), and ultrasonography (USG). Managed by certified radiologists and laboratory technicians to guarantee exact screening outcomes.
+            </p>
+            <div class="dept-stats-grid">
+              <div class="stat-col"><span class="label">Lab Safety</span><span class="value">Level-3 Equipment</span></div>
+              <div class="stat-col"><span class="label">Reporting Speed</span><span class="value">Same Day / 24 hrs</span></div>
+              <div class="stat-col"><span class="label">Accreditation</span><span class="value">NABL Standards</span></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Outlined Footer Brand text -->
+    <section class="subpage-brand-footer">
+      <h1 class="giant-bg-text-outline">SERVICES</h1>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="subpage-footer">
+    <div class="footer-navigation">
+      <div class="footer-left-links">
+        <span class="copyright-info">© 2026 JEEBANDEEP NURSING HOME</span>
+      </div>
+      <div class="footer-center-links">
+        <a href="index.html#board-intro" class="footer-link">About us</a>
+        <a href="departments.html" class="footer-link">Specialties</a>
+        <a href="doctors.html" class="footer-link">Doctors Directory</a>
+        <a href="index.html#board-facilities" class="footer-link">Facilities</a>
+      </div>
+      <div class="footer-right-links">
+        <span class="location-stamp">BOROPARA, HOOGHLY, INDIA</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MOBILE FULL-SCREEN MENU DRAWER -->
+  <div id="mobile-drawer-overlay" class="drawer-overlay">
+    <div class="drawer-grid">
+      <div class="grid-line vertical" style="left: 25%"></div>
+      <div class="grid-line vertical" style="left: 75%"></div>
+      <div class="grid-line horizontal" style="top: 30%"></div>
+      <div class="grid-line horizontal" style="top: 70%"></div>
+    </div>
+    
+    <div class="drawer-content">
+      <ul class="drawer-menu">
+        <li><a href="index.html#board-intro" class="drawer-item"><span>01</span> ABOUT</a></li>
+        <li><a href="departments.html" class="drawer-item"><span>02</span> DEPARTMENTS</a></li>
+        <li><a href="doctors.html" class="drawer-item"><span>03</span> DOCTORS</a></li>
+        <li><a href="index.html#board-facilities" class="drawer-item"><span>04</span> FACILITIES</a></li>
+        <li><a href="index.html#board-contact" class="drawer-item"><span>05</span> CONTACT</a></li>
+        <li><a href="appointment.html" class="drawer-item highlight"><span>06</span> BOOK APPOINTMENT</a></li>
+      </ul>
+
+      <div class="drawer-footer-info">
+        <div class="drawer-info-col">
+          <span class="tag">Emergency & Hotline</span>
+          <a href="tel:09163334571" class="link">091633 34571</a>
+        </div>
+        <div class="drawer-info-col">
+          <span class="tag">Clinic Location</span>
+          <p class="txt">Boropara, More, Mogra, Saptagram, West Bengal 712502</p>
+        </div>
+        <div class="drawer-info-col">
+          <span class="tag">Plus Code</span>
+          <span class="link-static">X98Q+3F Saptagram</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
