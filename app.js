@@ -22,6 +22,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 5. Setup mobile hamburger menu drawer toggle
   initMobileMenuDrawer();
+
+  // 6. Run Swiss-style preloader animation on every page load
+  initPreloader();
+
+  // 7. Setup scroll-to-top button visibility and click behavior
+  initBackToTop();
 });
 
 /**
@@ -465,6 +471,109 @@ function initMobileMenuDrawer() {
   drawerOverlay.addEventListener('click', (e) => {
     if (e.target === drawerOverlay) {
       closeMenu();
+    }
+  });
+}
+
+/**
+ * Swiss-style preloader: animates a progress bar from 0% to 100% with
+ * a percentage counter, then fades out to reveal the page content.
+ */
+function initPreloader() {
+  const preloader = document.getElementById('swiss-preloader');
+  const bar = document.getElementById('preloader-bar');
+  const pct = document.getElementById('preloader-percentage');
+
+  if (!preloader || !bar || !pct) return;
+
+  // Prevent body scroll while preloader is showing
+  document.body.style.overflow = 'hidden';
+
+  const statusMessages = [
+    'INITIALIZING SYSTEMS',
+    'LOADING ASSETS',
+    'PREPARING INTERFACE',
+    'ALMOST READY'
+  ];
+  const statusEl = preloader.querySelector('.preloader-status');
+
+  let progress = 0;
+  const totalDuration = 1600; // ms for total animation
+  const intervalMs = 20;
+  const steps = totalDuration / intervalMs;
+  const increment = 100 / steps;
+
+  const timer = setInterval(() => {
+    progress += increment + (Math.random() * 0.8);
+    if (progress >= 100) progress = 100;
+
+    const rounded = Math.floor(progress);
+    bar.style.width = `${progress}%`;
+    pct.textContent = String(rounded).padStart(2, '0') + '%';
+
+    // Update status message at milestones
+    if (statusEl) {
+      if (progress >= 75) statusEl.textContent = statusMessages[3];
+      else if (progress >= 50) statusEl.textContent = statusMessages[2];
+      else if (progress >= 25) statusEl.textContent = statusMessages[1];
+    }
+
+    if (progress >= 100) {
+      clearInterval(timer);
+      // Short pause at 100%, then fade out
+      setTimeout(() => {
+        preloader.classList.add('fade-out');
+        // Restore scroll and remove preloader from DOM after fade
+        setTimeout(() => {
+          document.body.style.overflow = '';
+          preloader.remove();
+        }, 650);
+      }, 200);
+    }
+  }, intervalMs);
+}
+
+/**
+ * Shows a scroll-to-top arrow button after user scrolls past 300px.
+ * Works on both vertical scroll (mobile/subpages) and horizontal
+ * scroll (desktop homepage slider).
+ */
+function initBackToTop() {
+  const btn = document.getElementById('back-to-top');
+  if (!btn) return;
+
+  const THRESHOLD = 300;
+
+  const updateVisibility = () => {
+    const verticalScroll = window.scrollY || document.documentElement.scrollTop;
+    const container = document.querySelector('.viewport-slides');
+    const horizontalScroll = container ? container.scrollLeft : 0;
+
+    const shouldShow = verticalScroll > THRESHOLD || horizontalScroll > THRESHOLD;
+    if (shouldShow) {
+      btn.classList.add('active');
+    } else {
+      btn.classList.remove('active');
+    }
+  };
+
+  // Listen on window scroll (subpages / mobile)
+  window.addEventListener('scroll', updateVisibility, { passive: true });
+
+  // Also listen on the horizontal slider container (desktop homepage)
+  const slidesContainer = document.querySelector('.viewport-slides');
+  if (slidesContainer) {
+    slidesContainer.addEventListener('scroll', updateVisibility, { passive: true });
+  }
+
+  // Click: scroll back to top
+  btn.addEventListener('click', () => {
+    // Vertical scroll back to top
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    // Also snap the horizontal slider back to first slide
+    if (slidesContainer) {
+      slidesContainer.scrollTo({ left: 0, behavior: 'smooth' });
     }
   });
 }
