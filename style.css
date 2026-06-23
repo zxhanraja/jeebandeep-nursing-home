@@ -33,6 +33,9 @@ html.loading-hash .viewport-slides {
 body {
   width: 100vw;
   height: 100vh;
+  /* overflow:hidden is set here for the homepage horizontal slider.
+     The preloader JS will also set overflow:hidden during loading,
+     then restore it after the animation completes. */
   overflow: hidden;
   background-color: var(--bg-color);
   color: var(--text-primary);
@@ -1973,14 +1976,13 @@ body.subpage {
   }
 }
 
-/* Enable hardware acceleration to prevent scrolling flicker on mobile browser viewports */
-.viewport-slides, .board-slide, .diagonal-grid, .subpage-content, .drawer-overlay, .app-header {
+/* Enable hardware acceleration ONLY on elements that don't interfere with preloader stacking.
+   NOTE: DO NOT add transform:translate3d to .viewport-slides or .board-slide —
+   doing so creates GPU compositing layers (stacking contexts) that elevate those
+   elements above the preloader even when z-index is higher on the preloader. */
+.diagonal-grid, .subpage-content, .drawer-overlay, .app-header {
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
-  transform: translate3d(0, 0, 0);
-  -webkit-transform: translate3d(0, 0, 0);
-  perspective: 1000;
-  -webkit-perspective: 1000;
 }
 
 /* Hamburger Toggle Button styles */
@@ -2136,18 +2138,20 @@ body.subpage {
    ========================================================================== */
 .swiss-preloader {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
+  inset: 0;
+  /* z-index 999999 ensures preloader stays above ANY transform-based stacking context */
+  z-index: 999999;
+  /* isolation: isolate creates its own stacking context independent of parent transforms */
+  isolation: isolate;
   background-color: var(--bg-color);
-  z-index: 99999;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.6s;
+  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.65s;
   opacity: 1;
   visibility: visible;
+  /* Prevent any child content from bleeding through on mobile WebKit */
+  will-change: opacity;
 }
 
 .swiss-preloader.fade-out {
