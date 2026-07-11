@@ -13,6 +13,16 @@ function initPreloader() {
 
   if (!preloader || !bar || !pct) return;
 
+  // Skip preloader if already seen in this session
+  if (sessionStorage.getItem('preloader-seen')) {
+    preloader.style.display = 'none';
+    document.body.style.overflow = '';
+    if (preloader.parentNode) {
+      preloader.parentNode.removeChild(preloader);
+    }
+    return;
+  }
+
   // Ensure preloader is truly on top — force inline style to override any stacking context issues
   preloader.style.zIndex = '99999';
   preloader.style.position = 'fixed';
@@ -54,6 +64,7 @@ function initPreloader() {
 
     if (progress >= 100) {
       clearInterval(timer);
+      sessionStorage.setItem('preloader-seen', 'true');
       // Short pause at 100%, then fade out
       setTimeout(() => {
         preloader.classList.add('fade-out');

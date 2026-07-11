@@ -953,6 +953,83 @@ a.dept-row {
    SUBPAGE STYLING (Doctors, Departments, Booking Portal)
    ========================================================================== */
 
+/* New responsive classes for contact and facilities subpages */
+.details-facilities-section {
+  padding: 80px 40px;
+  border-bottom: 1px solid var(--line-color);
+}
+
+.contact-main-section {
+  padding: 80px 40px 120px;
+  border-bottom: 1px solid var(--line-color);
+}
+.contact-page-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  border: 1px solid var(--line-color);
+}
+.contact-page-col {
+  padding: 50px 40px;
+  border-right: 1px solid var(--line-color);
+}
+.contact-page-col:last-child {
+  border-right: none;
+}
+.contact-page-tag {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+  display: block;
+  margin-bottom: 20px;
+}
+.contact-page-link {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  text-decoration: none;
+  display: block;
+  margin-bottom: 10px;
+  transition: color 0.3s ease;
+}
+.contact-page-link:hover {
+  color: #128266;
+}
+.contact-page-subtext {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+.contact-page-address {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.6;
+}
+
+@media (max-width: 1024px) {
+  .details-facilities-section {
+    padding: 40px 20px;
+  }
+  .contact-main-section {
+    padding: 40px 20px;
+  }
+  .contact-page-grid {
+    grid-template-columns: 1fr;
+  }
+  .contact-page-col {
+    padding: 30px 20px;
+    border-right: none;
+    border-bottom: 1px solid var(--line-color);
+  }
+  .contact-page-col:last-child {
+    border-bottom: none;
+  }
+}
+
 /* Subpage Main Wrapper Layout */
 .subpage-content {
   padding-top: var(--header-height);
