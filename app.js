@@ -15,17 +15,16 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-  // ── Shared modules (run on every page) ──────────────────────────────────
+  // ── Shared modules (run on every page) ─────────────────────────────────────
   initPreloader();       // Swiss-style loading animation
   initLiveClock();       // IST clock in header
   initMobileMenuDrawer();// Hamburger drawer toggle
   initBackToTop();       // Scroll-to-top button
 
-  // ── Homepage-only modules ───────────────────────────────────────────────
-  initNavigationScroll();       // Horizontal slide scrolling + nav state
-  initDepartmentHoverPreviews();// Floating image on department hover
+  // ── Homepage-only modules ─────────────────────────────────────
+  initDepartmentHoverPreviews();// Floating image on department hover (desktop)
 
-  // ── Appointment page module ─────────────────────────────────────────────
+  // ── Appointment page module ─────────────────────────────────────
   initAppointmentBooking();     // Booking form + ticket sync + modal
 });
 
@@ -115,109 +114,11 @@ function initLiveClock() {
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
-   HOMEPAGE SLIDE NAVIGATION — js/home.js
+   HOMEPAGE SLIDE NAVIGATION (legacy — no longer used)
    ═══════════════════════════════════════════════════════════════════════════ */
 function initNavigationScroll() {
-  const container = document.querySelector('.viewport-slides');
-  const navItems = document.querySelectorAll('.nav-item');
-  const triggers = document.querySelectorAll('.nav-trigger');
-
-  if (!container) return;
-
-  const overlay = document.createElement('div');
-  overlay.id = 'slide-fade-overlay';
-  overlay.style.cssText = [
-    'position:fixed', 'inset:0', 'background:var(--bg-color)',
-    'z-index:9999', 'pointer-events:none',
-    'opacity:0', 'transition:opacity 0.18s ease'
-  ].join(';');
-  document.body.appendChild(overlay);
-
-  function fadeToSlide(index) {
-    const isDesktop = window.innerWidth > 1024;
-    overlay.style.opacity = '1';
-    setTimeout(() => {
-      if (isDesktop) {
-        container.scrollTo({ left: index * window.innerWidth, behavior: 'instant' });
-      } else {
-        const slides = document.querySelectorAll('.board-slide');
-        if (slides[index]) {
-          const headerOffset = 80;
-          const elementPosition = slides[index].getBoundingClientRect().top;
-          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-          window.scrollTo({ top: offsetPosition, behavior: 'instant' });
-        }
-      }
-      requestAnimationFrame(() => { overlay.style.opacity = '0'; });
-    }, 180);
-  }
-
-  navItems.forEach(item => {
-    item.addEventListener('click', (e) => {
-      const href = item.getAttribute('href');
-      if (href.startsWith('#') || href.includes('index.html#')) {
-        e.preventDefault();
-        const targetIndex = parseInt(item.getAttribute('data-target'), 10);
-        if (!isNaN(targetIndex)) fadeToSlide(targetIndex);
-      }
-    });
-  });
-
-  triggers.forEach(trigger => {
-    trigger.addEventListener('click', (e) => {
-      const href = trigger.getAttribute('href');
-      if (href.startsWith('#') || href.includes('index.html#')) {
-        e.preventDefault();
-        const targetIndex = parseInt(trigger.getAttribute('data-target'), 10);
-        if (!isNaN(targetIndex)) fadeToSlide(targetIndex);
-      }
-    });
-  });
-
-  const slideIds = ['board-intro', 'board-departments', 'board-facilities', 'board-contact'];
-  const hash = window.location.hash.replace('#', '');
-  const hashIndex = slideIds.indexOf(hash);
-  if (hashIndex >= 0) {
-    const isDesktop = window.innerWidth > 1024;
-    if (hashIndex > 0) {
-      if (isDesktop) {
-        container.scrollLeft = hashIndex * window.innerWidth;
-      } else {
-        const slides = document.querySelectorAll('.board-slide');
-        if (slides[hashIndex]) {
-          const headerOffset = 80;
-          const elementPosition = slides[hashIndex].getBoundingClientRect().top;
-          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-          window.scrollTo({ top: offsetPosition, behavior: 'instant' });
-        }
-      }
-    }
-    requestAnimationFrame(() => {
-      document.documentElement.classList.remove('loading-hash');
-    });
-  }
-
-  let isScrolling;
-  container.addEventListener('scroll', () => {
-    window.clearTimeout(isScrolling);
-    isScrolling = setTimeout(() => {
-      const isDesktop = window.innerWidth > 1024;
-      if (!isDesktop) return;
-
-      const scrollPos = container.scrollLeft;
-      const slideWidth = window.innerWidth;
-      const activeIndex = Math.round(scrollPos / slideWidth);
-
-      navItems.forEach((link) => {
-        const target = link.getAttribute('data-target');
-        if (target !== null && parseInt(target, 10) === activeIndex) {
-          link.classList.add('active');
-        } else {
-          link.classList.remove('active');
-        }
-      });
-    }, 100);
-  });
+  // Horizontal slide navigation removed — now a multi-page site
+  return;
 }
 
 function initDepartmentHoverPreviews() {
@@ -387,7 +288,6 @@ function initAppointmentBooking() {
 function initMobileMenuDrawer() {
   const menuBtn = document.getElementById('mobile-menu-btn');
   const drawerOverlay = document.getElementById('mobile-drawer-overlay');
-  const drawerItems = document.querySelectorAll('.drawer-item');
 
   if (!menuBtn || !drawerOverlay) return;
 
@@ -408,39 +308,7 @@ function initMobileMenuDrawer() {
     toggleMenu();
   });
 
-  drawerItems.forEach(item => {
-    item.addEventListener('click', (e) => {
-      const href = item.getAttribute('href');
-      const container = document.querySelector('.viewport-slides');
-      if (container && (href.startsWith('#') || href.includes('index.html#'))) {
-        e.preventDefault();
-        const hash = href.includes('#') ? href.split('#')[1] : '';
-        const targetBoard = document.getElementById(hash);
-        if (targetBoard) {
-          drawerOverlay.classList.add('instant-close');
-          closeMenu();
-          requestAnimationFrame(() => { drawerOverlay.classList.remove('instant-close'); });
-
-          const slides = Array.from(document.querySelectorAll('.board-slide'));
-          const targetIndex = slides.indexOf(targetBoard);
-          if (targetIndex !== -1) {
-            const isDesktop = window.innerWidth > 1024;
-            if (isDesktop) {
-              container.scrollTo({ left: targetIndex * window.innerWidth, behavior: 'smooth' });
-            } else {
-              const headerOffset = 80;
-              const elementPosition = targetBoard.getBoundingClientRect().top;
-              const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-              window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
-            }
-          }
-        }
-      } else {
-        closeMenu();
-      }
-    });
-  });
-
+  // Close drawer when clicking outside
   drawerOverlay.addEventListener('click', (e) => {
     if (e.target === drawerOverlay) closeMenu();
   });
@@ -457,21 +325,12 @@ function initBackToTop() {
 
   const updateVisibility = () => {
     const verticalScroll = window.scrollY || document.documentElement.scrollTop;
-    const container = document.querySelector('.viewport-slides');
-    const horizontalScroll = container ? container.scrollLeft : 0;
-    const shouldShow = verticalScroll > THRESHOLD || horizontalScroll > THRESHOLD;
-    btn.classList.toggle('active', shouldShow);
+    btn.classList.toggle('active', verticalScroll > THRESHOLD);
   };
 
   window.addEventListener('scroll', updateVisibility, { passive: true });
 
-  const slidesContainer = document.querySelector('.viewport-slides');
-  if (slidesContainer) {
-    slidesContainer.addEventListener('scroll', updateVisibility, { passive: true });
-  }
-
   btn.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
-    if (slidesContainer) slidesContainer.scrollTo({ left: 0, behavior: 'smooth' });
   });
 }

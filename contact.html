@@ -3,11 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Jeebandeep Nursing Home - Premium Minimalist Modern Healthcare Studio. Trusted medical & diagnostic facilities in Boropara, Hooghly.">
-  <title>Jeebandeep Nursing Home // Modern Clinic & Care</title>
+  <meta name="description" content="Contact Jeebandeep Nursing Home. Emergency hotline, location, and general inquiries for clinic in Boropara, Hooghly.">
+  <title>Contact Us // Jeebandeep Nursing Home</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <!-- Importing Outfit for premium geometric headlines, and Inter for clean copy -->
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
@@ -27,7 +26,7 @@
     </div>
   </div>
 
-  <!-- Fine CAD/Architectural blueprint background grid -->
+  <!-- CAD blueprint lines -->
   <div class="architectural-grid">
     <div class="grid-line vertical"></div>
     <div class="grid-line vertical"></div>
@@ -37,21 +36,19 @@
     <div class="grid-line horizontal"></div>
     <div class="grid-line horizontal"></div>
     <div class="grid-line horizontal"></div>
-    <!-- Diagonal background cross lines for structural blueprint feel -->
     <svg class="diagonal-grid" width="100%" height="100%">
       <line x1="0" y1="0" x2="100%" y2="100%" stroke="rgba(0,0,0,0.025)" stroke-width="0.8"/>
       <line x1="100%" y1="0" x2="0" y2="100%" stroke="rgba(0,0,0,0.025)" stroke-width="0.8"/>
     </svg>
   </div>
 
-  <!-- Header / Navigation -->
+  <!-- Header -->
   <header class="app-header">
     <div class="header-left">
       <a href="index.html" class="nav-logo">
         <svg class="logo-svg" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
           <circle cx="20" cy="20" r="18" fill="none" stroke="#000000" stroke-width="1.5"/>
           <line x1="8" y1="8" x2="32" y2="32" stroke="#000000" stroke-width="1.5"/>
-          <!-- Subtle clean medical dot -->
           <circle cx="20" cy="20" r="4.5" fill="#000000" />
         </svg>
         <span class="logo-text">JEEBANDEEP // CLINIC</span>
@@ -60,11 +57,11 @@
     
     <nav class="header-nav">
       <ul class="nav-menu">
-        <li><a href="index.html" class="nav-item active">ABOUT</a></li>
+        <li><a href="index.html" class="nav-item">ABOUT</a></li>
         <li><a href="departments.html" class="nav-item">DEPARTMENTS</a></li>
         <li><a href="doctors.html" class="nav-item">DOCTORS</a></li>
         <li><a href="facilities.html" class="nav-item">FACILITIES</a></li>
-        <li><a href="contact.html" class="nav-item">CONTACT</a></li>
+        <li><a href="contact.html" class="nav-item active">CONTACT</a></li>
       </ul>
     </nav>
 
@@ -79,7 +76,6 @@
           <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </a>
-      <!-- Hamburger Menu Toggle Button for Mobile viewports -->
       <button id="mobile-menu-btn" class="mobile-menu-toggle" aria-label="Toggle Menu">
         <span class="bar"></span>
         <span class="bar"></span>
@@ -88,117 +84,61 @@
     </div>
   </header>
 
-  <!-- Homepage - vertically scrollable -->
+  <!-- Main Content Wrapper -->
   <main class="subpage-content">
-
-    <!-- HERO: BRAND INTRO -->
-    <section class="section-hero grid-intro home-hero-section">
-      
-      <!-- Intro description box -->
-      <div class="intro-description-box">
-        <div class="department-number">/ 01 /</div>
-        <p class="intro-paragraph">
-          We offer a comprehensive range of clinical services, from initial diagnostic screening to intensive emergency care and advanced surgery.
+    
+    <!-- Hero Banner -->
+    <section class="section-hero grid-2col-split">
+      <div class="title-panel">
+        <div class="department-number">/ 05 / REACH</div>
+        <h1 class="giant-subpage-title">Get In<br>Touch</h1>
+      </div>
+      <div class="desc-panel">
+        <p class="subpage-intro-paragraph">
+          Our cutting-edge medical facilities integrate modern healthcare technology with patient-centric support protocols. Jeebandeep Nursing Home stands as a model of clinical integrity, ensuring advanced medical care is within reach for the entire community.
         </p>
       </div>
-
-      <!-- Main visual portrait block -->
-      <div class="intro-portrait-container">
-        <div class="image-wrapper">
-          <img src="assets/images/doc1.webp" alt="Clinical Specialist" class="portrait-img" decoding="async">
-        </div>
-        <div class="portrait-caption">
-          <span class="caption-title">Dr. S. Chatterjee</span>
-          <span class="caption-subtitle">Chief Medical Officer</span>
-          <div class="caption-plus">+ 2026</div>
-        </div>
-      </div>
-
-      <!-- Center holistic tagline quote -->
-      <div class="tagline-quote-box">
-        <h2 class="quote-text">
-          Our holistic approach ensures that every patient is meticulously <strong>evaluated</strong>, beautifully <strong>accommodated</strong>, and flawlessly <strong>treated</strong>.
-        </h2>
-        <span class="concept-label">From Diagnostic to Recovery</span>
-        <a href="departments.html" class="diamond-cta">
-          <span class="diamond-icon">◇</span> GET STARTED
-        </a>
-      </div>
-
-      <!-- Giant background/bottom typography overlapping -->
-      <div class="slide-footer-brand">
-        <div class="footer-tags">
-          <span>Compassion</span>
-          <span>Precision</span>
-          <span>Excellence</span>
-        </div>
-        <h1 class="giant-bg-text">JEEBANDEEP</h1>
-      </div>
-
     </section>
 
-    <!-- DEPARTMENTS PREVIEW STRIP -->
-    <section class="home-depts-preview-section">
-      <div class="departments-header-strip">
-        <span class="section-tag-small">TS 04 // CL</span>
-        <h3 class="departments-panel-title">Medical Specialties & Departments</h3>
-      </div>
+    <!-- Contact Details Grid -->
+    <section class="contact-main-section" style="padding: 80px 40px 120px; border-bottom: 1px solid var(--line-color);">
+      <div class="contact-details-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; border: 1px solid var(--line-color);">
 
-      <!-- Vertically aligned department rows with dynamic hover previews -->
-      <div class="departments-list">
-        
-        <a href="departments.html" class="dept-row" data-preview="assets/emergency_care.png">
-          <div class="dept-index">/ 24 /</div>
-          <h2 class="dept-name">Emergency Care</h2>
-          <div class="dept-img-thumbnail">
-            <img src="assets/emergency_care.png" alt="Emergency Care Thumbnail" loading="lazy" decoding="async">
-          </div>
-          <div class="dept-status">24/7 Critical Response</div>
-        </a>
+        <div class="contact-col" style="padding: 50px 40px; border-right: 1px solid var(--line-color);">
+          <span class="col-tag" style="font-family: var(--font-mono); font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--text-muted); display: block; margin-bottom: 20px;">Emergency Line & Hotline</span>
+          <a href="tel:09163334571" class="contact-link" style="font-family: var(--font-display); font-size: 1.4rem; font-weight: 700; color: var(--text-primary); text-decoration: none; display: block; margin-bottom: 10px; transition: color 0.3s ease;">091633 34571</a>
+          <span class="col-subtext" style="font-size: 0.8rem; color: var(--text-muted);">Open 24 Hours / Ambulance & Triage</span>
+        </div>
 
-        <a href="departments.html" class="dept-row" data-preview="assets/clinic_interior.png">
-          <div class="dept-index">/ 08 /</div>
-          <h2 class="dept-name">General Medicine</h2>
-          <div class="dept-img-thumbnail">
-            <img src="assets/clinic_interior.png" alt="General Medicine Thumbnail" loading="lazy" decoding="async">
-          </div>
-          <div class="dept-status">Outpatient Clinic</div>
-        </a>
+        <div class="contact-col" style="padding: 50px 40px; border-right: 1px solid var(--line-color);">
+          <span class="col-tag" style="font-family: var(--font-mono); font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--text-muted); display: block; margin-bottom: 20px;">Plus Code Location</span>
+          <span style="font-family: var(--font-display); font-size: 1.45rem; font-weight: 600; color: var(--text-primary); display: block; margin-bottom: 10px;">X98Q+3F Saptagram</span>
+          <span class="col-subtext" style="font-size: 0.8rem; color: var(--text-muted);">Google Maps Code (West Bengal)</span>
+        </div>
 
-        <a href="departments.html" class="dept-row" data-preview="assets/doctor_portrait.png">
-          <div class="dept-index">/ 12 /</div>
-          <h2 class="dept-name">Specialized Surgery</h2>
-          <div class="dept-img-thumbnail">
-            <img src="assets/doctor_portrait.png" alt="Surgery Thumbnail" loading="lazy" decoding="async">
-          </div>
-          <div class="dept-status">Advanced O.T. Units</div>
-        </a>
+        <div class="contact-col" style="padding: 50px 40px; border-right: 1px solid var(--line-color);">
+          <span class="col-tag" style="font-family: var(--font-mono); font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--text-muted); display: block; margin-bottom: 20px;">General Inquiries</span>
+          <a href="mailto:care@jeebandeep.com" class="contact-link" style="font-family: var(--font-display); font-size: 1.1rem; font-weight: 700; color: var(--text-primary); text-decoration: none; display: block; margin-bottom: 10px;">care@jeebandeep.com</a>
+          <span class="col-subtext" style="font-size: 0.8rem; color: var(--text-muted);">Appointments & Billing</span>
+        </div>
 
-        <a href="departments.html" class="dept-row" data-preview="assets/clinic_interior.png">
-          <div class="dept-index">/ 15 /</div>
-          <h2 class="dept-name">Maternity & Pediatric</h2>
-          <div class="dept-img-thumbnail">
-            <img src="assets/clinic_interior.png" alt="Maternity Thumbnail" loading="lazy" decoding="async">
-          </div>
-          <div class="dept-status">Specialized Ward</div>
-        </a>
-
-        <a href="departments.html" class="dept-row" data-preview="assets/diagnostic_lab.png">
-          <div class="dept-index">/ 04 /</div>
-          <h2 class="dept-name">Diagnostic Services</h2>
-          <div class="dept-img-thumbnail">
-            <img src="assets/diagnostic_lab.png" alt="Diagnostics Thumbnail" loading="lazy" decoding="async">
-          </div>
-          <div class="dept-status">Pathology & Radiology</div>
-        </a>
+        <div class="contact-col" style="padding: 50px 40px;">
+          <span class="col-tag" style="font-family: var(--font-mono); font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--text-muted); display: block; margin-bottom: 20px;">Clinic Location</span>
+          <p class="address-paragraph" style="font-family: var(--font-display); font-size: 1rem; font-weight: 600; color: var(--text-primary); line-height: 1.6;">
+            Boropara, More, Mogra, Saptagram,<br>
+            Chinsurah, West Bengal 712502
+          </p>
+        </div>
 
       </div>
 
-      <!-- Floating Preview Element for Desktop hover -->
-      <div id="hover-preview-container">
-        <img id="hover-preview-img" src="" alt="Department Preview">
+      <!-- Large brand footer -->
+      <div class="contact-brand-footer" style="position: relative; overflow: hidden; margin-top: 80px; display: flex; align-items: flex-end; gap: 40px;">
+        <h2 class="giant-bg-text-outline" style="font-family: var(--font-display); font-size: clamp(4rem, 12vw, 10rem); font-weight: 800; letter-spacing: -0.03em; color: transparent; -webkit-text-stroke: 1px var(--line-color-dark); line-height: 1; user-select: none; flex: 1;">CARE</h2>
+        <div class="contact-brand-image" style="width: 35%; aspect-ratio: 4/3; overflow: hidden; flex-shrink: 0;">
+          <img src="assets/clinic_interior.png" alt="Clinical Environment Preview" class="footer-overlap-img" loading="lazy" decoding="async" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+        </div>
       </div>
-
     </section>
 
   </main>
@@ -224,7 +164,6 @@
 
   <!-- MOBILE FULL-SCREEN MENU DRAWER -->
   <div id="mobile-drawer-overlay" class="drawer-overlay">
-    <!-- Fine CAD blueprint grids inside drawer -->
     <div class="drawer-grid">
       <div class="grid-line vertical" style="left: 25%"></div>
       <div class="grid-line vertical" style="left: 75%"></div>

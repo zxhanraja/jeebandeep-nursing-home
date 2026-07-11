@@ -6,7 +6,7 @@ import { defineConfig } from 'vite'
 const __dirname = fileURLToPath(new URL('.', import.meta.url))
 
 export default defineConfig({
-  // Multi-page app: all 4 HTML pages as entry points
+  // Multi-page app: all 6 HTML pages as entry points
   build: {
     rollupOptions: {
       input: {
@@ -14,6 +14,8 @@ export default defineConfig({
         appointment: resolve(__dirname, 'appointment.html'),
         departments: resolve(__dirname, 'departments.html'),
         doctors:     resolve(__dirname, 'doctors.html'),
+        facilities:  resolve(__dirname, 'facilities.html'),
+        contact:     resolve(__dirname, 'contact.html'),
       },
     },
   },

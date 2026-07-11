@@ -3,11 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Jeebandeep Nursing Home - Premium Minimalist Modern Healthcare Studio. Trusted medical & diagnostic facilities in Boropara, Hooghly.">
-  <title>Jeebandeep Nursing Home // Modern Clinic & Care</title>
+  <meta name="description" content="Explore clinical environment and facilities at Jeebandeep Nursing Home. Experienced medical equipment and modern infrastructure.">
+  <title>Clinical Facilities // Jeebandeep Nursing Home</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <!-- Importing Outfit for premium geometric headlines, and Inter for clean copy -->
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
@@ -27,7 +26,7 @@
     </div>
   </div>
 
-  <!-- Fine CAD/Architectural blueprint background grid -->
+  <!-- CAD blueprint lines -->
   <div class="architectural-grid">
     <div class="grid-line vertical"></div>
     <div class="grid-line vertical"></div>
@@ -37,21 +36,19 @@
     <div class="grid-line horizontal"></div>
     <div class="grid-line horizontal"></div>
     <div class="grid-line horizontal"></div>
-    <!-- Diagonal background cross lines for structural blueprint feel -->
     <svg class="diagonal-grid" width="100%" height="100%">
       <line x1="0" y1="0" x2="100%" y2="100%" stroke="rgba(0,0,0,0.025)" stroke-width="0.8"/>
       <line x1="100%" y1="0" x2="0" y2="100%" stroke="rgba(0,0,0,0.025)" stroke-width="0.8"/>
     </svg>
   </div>
 
-  <!-- Header / Navigation -->
+  <!-- Header -->
   <header class="app-header">
     <div class="header-left">
       <a href="index.html" class="nav-logo">
         <svg class="logo-svg" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
           <circle cx="20" cy="20" r="18" fill="none" stroke="#000000" stroke-width="1.5"/>
           <line x1="8" y1="8" x2="32" y2="32" stroke="#000000" stroke-width="1.5"/>
-          <!-- Subtle clean medical dot -->
           <circle cx="20" cy="20" r="4.5" fill="#000000" />
         </svg>
         <span class="logo-text">JEEBANDEEP // CLINIC</span>
@@ -60,10 +57,10 @@
     
     <nav class="header-nav">
       <ul class="nav-menu">
-        <li><a href="index.html" class="nav-item active">ABOUT</a></li>
+        <li><a href="index.html" class="nav-item">ABOUT</a></li>
         <li><a href="departments.html" class="nav-item">DEPARTMENTS</a></li>
         <li><a href="doctors.html" class="nav-item">DOCTORS</a></li>
-        <li><a href="facilities.html" class="nav-item">FACILITIES</a></li>
+        <li><a href="facilities.html" class="nav-item active">FACILITIES</a></li>
         <li><a href="contact.html" class="nav-item">CONTACT</a></li>
       </ul>
     </nav>
@@ -79,7 +76,6 @@
           <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </a>
-      <!-- Hamburger Menu Toggle Button for Mobile viewports -->
       <button id="mobile-menu-btn" class="mobile-menu-toggle" aria-label="Toggle Menu">
         <span class="bar"></span>
         <span class="bar"></span>
@@ -88,117 +84,106 @@
     </div>
   </header>
 
-  <!-- Homepage - vertically scrollable -->
+  <!-- Main Content Wrapper -->
   <main class="subpage-content">
-
-    <!-- HERO: BRAND INTRO -->
-    <section class="section-hero grid-intro home-hero-section">
-      
-      <!-- Intro description box -->
-      <div class="intro-description-box">
-        <div class="department-number">/ 01 /</div>
-        <p class="intro-paragraph">
-          We offer a comprehensive range of clinical services, from initial diagnostic screening to intensive emergency care and advanced surgery.
+    
+    <!-- Hero Banner -->
+    <section class="section-hero grid-2col-split">
+      <div class="title-panel">
+        <div class="department-number">/ 03 / ENVIRO</div>
+        <h1 class="giant-subpage-title">Clinical<br>Facilities</h1>
+      </div>
+      <div class="desc-panel">
+        <p class="subpage-intro-paragraph">
+          Our clinic integrates modern healthcare technology with clean patient-centric design. We maintain rigorous standards of hygiene, safety, and operational precision.
         </p>
       </div>
-
-      <!-- Main visual portrait block -->
-      <div class="intro-portrait-container">
-        <div class="image-wrapper">
-          <img src="assets/images/doc1.webp" alt="Clinical Specialist" class="portrait-img" decoding="async">
-        </div>
-        <div class="portrait-caption">
-          <span class="caption-title">Dr. S. Chatterjee</span>
-          <span class="caption-subtitle">Chief Medical Officer</span>
-          <div class="caption-plus">+ 2026</div>
-        </div>
-      </div>
-
-      <!-- Center holistic tagline quote -->
-      <div class="tagline-quote-box">
-        <h2 class="quote-text">
-          Our holistic approach ensures that every patient is meticulously <strong>evaluated</strong>, beautifully <strong>accommodated</strong>, and flawlessly <strong>treated</strong>.
-        </h2>
-        <span class="concept-label">From Diagnostic to Recovery</span>
-        <a href="departments.html" class="diamond-cta">
-          <span class="diamond-icon">◇</span> GET STARTED
-        </a>
-      </div>
-
-      <!-- Giant background/bottom typography overlapping -->
-      <div class="slide-footer-brand">
-        <div class="footer-tags">
-          <span>Compassion</span>
-          <span>Precision</span>
-          <span>Excellence</span>
-        </div>
-        <h1 class="giant-bg-text">JEEBANDEEP</h1>
-      </div>
-
     </section>
 
-    <!-- DEPARTMENTS PREVIEW STRIP -->
-    <section class="home-depts-preview-section">
-      <div class="departments-header-strip">
-        <span class="section-tag-small">TS 04 // CL</span>
-        <h3 class="departments-panel-title">Medical Specialties & Departments</h3>
-      </div>
-
-      <!-- Vertically aligned department rows with dynamic hover previews -->
-      <div class="departments-list">
+    <!-- Facilities Layout -->
+    <section class="details-facilities-section" style="padding: 100px 40px; border-bottom: 1px solid var(--line-color);">
+      <div class="grid-facilities" style="display: grid; grid-template-columns: 30% 70%; border: 1px solid var(--line-color);">
         
-        <a href="departments.html" class="dept-row" data-preview="assets/emergency_care.png">
-          <div class="dept-index">/ 24 /</div>
-          <h2 class="dept-name">Emergency Care</h2>
-          <div class="dept-img-thumbnail">
-            <img src="assets/emergency_care.png" alt="Emergency Care Thumbnail" loading="lazy" decoding="async">
+        <!-- Sidebar Column -->
+        <div class="facilities-intro-column" style="padding: 60px 40px; border-right: 1px solid var(--line-color);">
+          <div class="department-number">/ 03 /</div>
+          <h3 class="facility-sidebar-title" style="font-family: var(--font-display); font-size: 2rem; font-weight: 700; margin-bottom: 25px; line-height: 1.1; letter-spacing: -0.02em;">Clinical Environment</h3>
+          <p class="facilities-description" style="font-size: 0.95rem; line-height: 1.6; color: var(--text-muted); margin-bottom: 30px;">
+            A state-of-the-art facility engineered around hygiene, accessibility, and high recovery outcomes.
+          </p>
+          <div class="stars-rating" style="font-family: var(--font-mono); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em;">
+            <span style="display: block; margin-bottom: 5px;">4.3 ★ / 44 Google Reviews</span>
+            <div class="stars" style="font-size: 1.1rem; color: var(--text-primary);">★★★★☆</div>
           </div>
-          <div class="dept-status">24/7 Critical Response</div>
-        </a>
+          <div class="facility-features" style="margin-top: 25px; display: flex; flex-direction: column; gap: 8px;">
+            <div class="feature-tag" style="font-family: var(--font-mono); font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted);">♿ Wheelchair-Accessible Entrance & Parking</div>
+            <div class="feature-tag" style="font-family: var(--font-mono); font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted);">💳 Cards & NFC Payments Accepted</div>
+          </div>
+        </div>
 
-        <a href="departments.html" class="dept-row" data-preview="assets/clinic_interior.png">
-          <div class="dept-index">/ 08 /</div>
-          <h2 class="dept-name">General Medicine</h2>
-          <div class="dept-img-thumbnail">
-            <img src="assets/clinic_interior.png" alt="General Medicine Thumbnail" loading="lazy" decoding="async">
-          </div>
-          <div class="dept-status">Outpatient Clinic</div>
-        </a>
+        <!-- Interactive Facility Cards -->
+        <div class="facility-cards-row" style="display: grid; grid-template-columns: repeat(3, 1fr); padding: 40px; gap: 30px; background-color: rgba(247, 247, 244, 0.5);">
 
-        <a href="departments.html" class="dept-row" data-preview="assets/doctor_portrait.png">
-          <div class="dept-index">/ 12 /</div>
-          <h2 class="dept-name">Specialized Surgery</h2>
-          <div class="dept-img-thumbnail">
-            <img src="assets/doctor_portrait.png" alt="Surgery Thumbnail" loading="lazy" decoding="async">
+          <!-- Card 1 -->
+          <div class="facility-card">
+            <div class="card-image-box">
+              <img src="assets/emergency_care.png" alt="Critical Care Ward" class="facility-img" loading="lazy" decoding="async">
+              <div class="card-plus-btn">+</div>
+            </div>
+            <div class="card-info">
+              <div class="card-header-line">
+                <span class="facility-title">ICU & Critical Care</span>
+                <span class="facility-tag-label">Emergency</span>
+              </div>
+              <div class="facility-metadata">
+                <div class="meta-item"><span class="label">Location</span><span class="value">Boropara, Hooghly</span></div>
+                <div class="meta-item"><span class="label">Bed Cap.</span><span class="value">16 Bed Unit</span></div>
+                <div class="meta-item"><span class="label">Area</span><span class="value">450 sqm.</span></div>
+              </div>
+            </div>
           </div>
-          <div class="dept-status">Advanced O.T. Units</div>
-        </a>
 
-        <a href="departments.html" class="dept-row" data-preview="assets/clinic_interior.png">
-          <div class="dept-index">/ 15 /</div>
-          <h2 class="dept-name">Maternity & Pediatric</h2>
-          <div class="dept-img-thumbnail">
-            <img src="assets/clinic_interior.png" alt="Maternity Thumbnail" loading="lazy" decoding="async">
+          <!-- Card 2 -->
+          <div class="facility-card">
+            <div class="card-image-box">
+              <img src="assets/clinic_interior.png" alt="Outpatient Lounge" class="facility-img" loading="lazy" decoding="async">
+              <div class="card-plus-btn">+</div>
+            </div>
+            <div class="card-info">
+              <div class="card-header-line">
+                <span class="facility-title">Outpatient Lounge (OPD)</span>
+                <span class="facility-tag-label">Consultations</span>
+              </div>
+              <div class="facility-metadata">
+                <div class="meta-item"><span class="label">Location</span><span class="value">Hooghly, WB</span></div>
+                <div class="meta-item"><span class="label">Capacity</span><span class="value">120 daily</span></div>
+                <div class="meta-item"><span class="label">Area</span><span class="value">320 sqm.</span></div>
+              </div>
+            </div>
           </div>
-          <div class="dept-status">Specialized Ward</div>
-        </a>
 
-        <a href="departments.html" class="dept-row" data-preview="assets/diagnostic_lab.png">
-          <div class="dept-index">/ 04 /</div>
-          <h2 class="dept-name">Diagnostic Services</h2>
-          <div class="dept-img-thumbnail">
-            <img src="assets/diagnostic_lab.png" alt="Diagnostics Thumbnail" loading="lazy" decoding="async">
+          <!-- Card 3 -->
+          <div class="facility-card">
+            <div class="card-image-box">
+              <img src="assets/diagnostic_lab.png" alt="Radiology Suite" class="facility-img" loading="lazy" decoding="async">
+              <div class="card-plus-btn">+</div>
+            </div>
+            <div class="card-info">
+              <div class="card-header-line">
+                <span class="facility-title">Advanced Pathology Lab</span>
+                <span class="facility-tag-label">Diagnostics</span>
+              </div>
+              <div class="facility-metadata">
+                <div class="meta-item"><span class="label">Location</span><span class="value">Boropara, Hooghly</span></div>
+                <div class="meta-item"><span class="label">Lab Class</span><span class="value">Level-3 Safety</span></div>
+                <div class="meta-item"><span class="label">Area</span><span class="value">180 sqm.</span></div>
+              </div>
+            </div>
           </div>
-          <div class="dept-status">Pathology & Radiology</div>
-        </a>
+
+        </div>
 
       </div>
-
-      <!-- Floating Preview Element for Desktop hover -->
-      <div id="hover-preview-container">
-        <img id="hover-preview-img" src="" alt="Department Preview">
-      </div>
-
     </section>
 
   </main>
@@ -224,7 +209,6 @@
 
   <!-- MOBILE FULL-SCREEN MENU DRAWER -->
   <div id="mobile-drawer-overlay" class="drawer-overlay">
-    <!-- Fine CAD blueprint grids inside drawer -->
     <div class="drawer-grid">
       <div class="grid-line vertical" style="left: 25%"></div>
       <div class="grid-line vertical" style="left: 75%"></div>
@@ -237,7 +221,7 @@
         <li><a href="index.html" class="drawer-item"><span>01</span> ABOUT</a></li>
         <li><a href="departments.html" class="drawer-item"><span>02</span> DEPARTMENTS</a></li>
         <li><a href="doctors.html" class="drawer-item"><span>03</span> DOCTORS</a></li>
-        <li><a href="facilities.html" class="drawer-item"><span>04</span> FACILITIES</a></li>
+        <li><a href="facilities.html" class="drawer-item highlight"><span>04</span> FACILITIES</a></li>
         <li><a href="contact.html" class="drawer-item"><span>05</span> CONTACT</a></li>
         <li><a href="appointment.html" class="drawer-item highlight"><span>06</span> BOOK APPOINTMENT</a></li>
       </ul>

@@ -29,42 +29,8 @@ function initMobileMenuDrawer() {
 
   // Close drawer when clicking a link item
   drawerItems.forEach(item => {
-    item.addEventListener('click', (e) => {
-      const href = item.getAttribute('href');
-
-      const container = document.querySelector('.viewport-slides');
-      if (container && (href.startsWith('#') || href.includes('index.html#'))) {
-        e.preventDefault();
-        const hash = href.includes('#') ? href.split('#')[1] : '';
-        const targetBoard = document.getElementById(hash);
-        if (targetBoard) {
-          // Instant-close drawer without transition to avoid lag
-          drawerOverlay.classList.add('instant-close');
-          closeMenu();
-          requestAnimationFrame(() => {
-            drawerOverlay.classList.remove('instant-close');
-          });
-
-          const slides = Array.from(document.querySelectorAll('.board-slide'));
-          const targetIndex = slides.indexOf(targetBoard);
-          if (targetIndex !== -1) {
-            const isDesktop = window.innerWidth > 1024;
-            if (isDesktop) {
-              container.scrollTo({
-                left: targetIndex * window.innerWidth,
-                behavior: 'smooth'
-              });
-            } else {
-              const headerOffset = 80;
-              const elementPosition = targetBoard.getBoundingClientRect().top;
-              const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-              window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
-            }
-          }
-        }
-      } else {
-        closeMenu();
-      }
+    item.addEventListener('click', () => {
+      closeMenu();
     });
   });
 
